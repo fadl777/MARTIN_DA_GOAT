@@ -11,4 +11,10 @@ describe("testing sayHello.fn", ()=>{
     it("should throw an error if I provide a number", ()=>{
         expect(() => sayHello(12)).toThrow(ERROR_MESSAGES.stringError)
     })
+    it("should throw an error if I provide an array" , ()=>{
+        expect(() => sayHello({name: 'BLOB', address: 'EPITA'})).toThrow(ERROR_MESSAGES.stringError)
+    })
+    it("should throw an error if I provide a boolean value" , ()=>{
+        expect(() => sayHello(true)).toThrow(ERROR_MESSAGES.stringError)
+    })
 });
